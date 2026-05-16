@@ -118,11 +118,21 @@ button{font:inherit}
 .site-nav a:focus-visible::after{
   transform:scaleX(1);
 }
+.site-nav a:focus-visible{
+  outline:2px solid var(--ochre);
+  outline-offset:3px;
+  border-radius:3px;
+}
 .nav-toggle{
   display:none;
   border:none;
   background:transparent;
   padding:.35rem;
+}
+.nav-toggle:focus-visible{
+  outline:2px solid var(--ochre);
+  outline-offset:3px;
+  border-radius:4px;
 }
 .nav-toggle span{
   display:block;
@@ -192,6 +202,10 @@ button{font:inherit}
 .button:focus-visible{
   transform:translateY(-2px);
   box-shadow:var(--shadow);
+}
+.button:focus-visible{
+  outline:2px solid var(--ochre);
+  outline-offset:3px;
 }
 .button-primary{
   background:linear-gradient(135deg, var(--ochre), var(--ochre-deep));
@@ -559,8 +573,7 @@ button{font:inherit}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .mirage,
-  .reveal{
+  *,*::before,*::after{
     animation:none !important;
     transition:none !important;
   }

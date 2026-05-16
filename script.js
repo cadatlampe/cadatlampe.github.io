@@ -11,7 +11,16 @@ if (navToggle && nav) {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.focus();
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.focus();
+    }
   });
 }
 
